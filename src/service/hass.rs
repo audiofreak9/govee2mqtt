@@ -163,7 +163,7 @@ impl HassClient {
         let payload = serde_json::to_string(&payload)?;
         log::trace!("{topic} -> {payload}");
         self.client
-            .publish(topic, payload, QoS::AtMostOnce, false)
+            .publish(topic, payload, QoS::AtMostOnce, true) // retain = true
             .await?;
         Ok(())
     }
