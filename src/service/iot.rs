@@ -36,7 +36,7 @@ impl IotClient {
                     }
                 }))?,
                 QoS::AtMostOnce,
-                false,
+                true,  
             )
             .await?;
 
